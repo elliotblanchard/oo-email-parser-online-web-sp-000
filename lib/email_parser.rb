@@ -24,8 +24,8 @@ class EmailAddressParser
 
     @emails.each_with_index do |value,index|
       if value.include? " "
-        separated_emails << value.split(" ")[1]
         separated_emails << value.split(" ")[0]
+        separated_emails << value.split(" ")[1]
       else
         separated_emails << value
       end
