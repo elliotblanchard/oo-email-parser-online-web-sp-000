@@ -31,6 +31,8 @@ class EmailAddressParser
       end
     end
 
+    @emails = separated_emails
+
     @emails.uniq
   end
 
