@@ -19,10 +19,15 @@ class EmailAddressParser
     elsif @address_string.include? ""
       @emails = @address_string.split(" ")
     end
+
+    separated_emails = []
+
     @emails.each_with_index do |value,index|
       if value.include? " "
-        @emails << value.split(" ")[1]
-        @emails[index] = value.split(" ")[0]
+        separated_emails << value.split(" ")[1]
+        separated_emails << value.split(" ")[0]
+      else
+        separated_emails << value
       end
     end
 
