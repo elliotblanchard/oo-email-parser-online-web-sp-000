@@ -19,6 +19,8 @@ class EmailAddressParser
     elsif @address_string.include? ""
       @emails = @address_string.split(" ")
     end
+
+    @emails.uniq
   end
 
 end
