@@ -18,7 +18,12 @@ class EmailAddressParser
       @emails = @address_string.split(", ")
     elsif @address_string.include? ""
       @emails = @address_string.split(" ")
-    elsif @address_string.include? ", " && @address_string.include? " "
+    end
+    @emails.each_with_index do |value,index|
+      if value.include? " "
+        @emails << value.split(" ")[1]
+        @emails[index] = value.split(" ")[0]
+      end
     end
 
     @emails.uniq
